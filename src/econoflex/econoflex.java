@@ -1,37 +1,25 @@
 package econoflex;
 
 
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 
 public class econoflex extends javax.swing.JFrame {
 
-        
     clsDataHora objDataHora = new clsDataHora();
-   
+
     public econoflex() {
         initComponents();
-        jTextField1.setText(objDataHora.MostraData()); 
-        jTextField2.setText(objDataHora.MostraHora()); 
+        jTextField1.setText(objDataHora.MostraData());
+        jTextField2.setText(objDataHora.MostraHora());
         jTextField4.setText("10.2 Km/L");
         jTextField3.setText("0 Km/H");
-        jTextField8.setText("50.5 Km");
+        jTextField8.setText("50049 Km");
         jTextField7.setText("29 oC");
         jTextField9.setText("800.0");
         jTextField5.setText("90%");
-       }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -70,7 +58,9 @@ public class econoflex extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setCursor(new java.awt.Cursor(java.awt.Cursor.E_RESIZE_CURSOR));
+        setTitle("Econoflex");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(32, 23, 9));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -80,6 +70,7 @@ public class econoflex extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1479794356_Citycons_car.png"))); // NOI18N
         jLabel3.setText("EconoFlex");
 
+        jTextField1.setEditable(false);
         jTextField1.setText("Data");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +83,7 @@ public class econoflex extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1479794125_resolutions-04.png"))); // NOI18N
 
+        jTextField2.setEditable(false);
         jTextField2.setText("Hora");
 
         jPanel3.setBackground(new java.awt.Color(177, 173, 169));
@@ -124,6 +116,7 @@ public class econoflex extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("DejaVu Sans Mono", 1, 15)); // NOI18N
         jLabel14.setText("Nível de Lubrificante");
 
+        jTextField3.setEditable(false);
         jTextField3.setText("KM/H");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +124,7 @@ public class econoflex extends javax.swing.JFrame {
             }
         });
 
+        jTextField4.setEditable(false);
         jTextField4.setText("KM/L");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +132,7 @@ public class econoflex extends javax.swing.JFrame {
             }
         });
 
+        jTextField5.setEditable(false);
         jTextField5.setText("%");
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,6 +140,7 @@ public class econoflex extends javax.swing.JFrame {
             }
         });
 
+        jTextField7.setEditable(false);
         jTextField7.setText("oC");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,6 +148,7 @@ public class econoflex extends javax.swing.JFrame {
             }
         });
 
+        jTextField8.setEditable(false);
         jTextField8.setText("KM");
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,6 +156,7 @@ public class econoflex extends javax.swing.JFrame {
             }
         });
 
+        jTextField9.setEditable(false);
         jTextField9.setText("RPM");
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,6 +279,12 @@ public class econoflex extends javax.swing.JFrame {
         jLabel17.setText("Rota");
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1479856688_arrow-right-01.png"))); // NOI18N
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
 
         jLabel18.setFont(new java.awt.Font("DejaVu Sans Mono", 1, 15)); // NOI18N
         jLabel18.setText("Planejamento");
@@ -387,7 +391,8 @@ public class econoflex extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(594, 685));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
@@ -418,40 +423,48 @@ public class econoflex extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-   
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        Calculo janela = new Calculo();
+        
+        janela.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jLabel8MouseClicked
+
     public static void main(String args[]) {
-      
+
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {     
-                 new econoflex().setVisible(true);
-             }
+            public void run() {
+                new econoflex().setVisible(true);
+            }
         });
     }
 
+    public class clsDataHora {
 
-   
-public class clsDataHora {
-    public String MostraData(){
-       //pega data do computador
-       Date data = new Date();
-       //cria o formatador
-       SimpleDateFormat dformatador = new SimpleDateFormat("dd/MM/yyyy");
-       // cria a string para armazenar data
-       String sData = dformatador.format(data);
+        public String MostraData() {
+            //pega data do computador
+            Date data = new Date();
+            //cria o formatador
+            SimpleDateFormat dformatador = new SimpleDateFormat("dd/MM/yyyy");
+            // cria a string para armazenar data
+            String sData = dformatador.format(data);
 
-       //retorna o pedido
-        return sData;
+            //retorna o pedido
+            return sData;
+        }
+
+        public String MostraHora() {
+            //pega data para converter em horas
+            Date data = new Date();
+            //cria o formatador
+            SimpleDateFormat hformatador = new SimpleDateFormat("hh:mm:ss");
+            // cria a string
+            String sHora = hformatador.format(data);
+            return sHora;
+        }
     }
-    public String MostraHora(){
-       //pega data para converter em horas
-       Date data = new Date();
-       //cria o formatador
-       SimpleDateFormat hformatador = new SimpleDateFormat("hh:mm:ss");
-       // cria a string
-       String sHora = hformatador.format(data);
-       return sHora;
-    }
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
